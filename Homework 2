@@ -1,0 +1,11 @@
+name= str(input("Please Write First Name: "))
+surname= str(input("Please Write Last Name: "))
+age= int(input("Please Write Age and Use the Numeric Number: ")) #:)
+birth= int(input("Please Write Date of Birth (Just Year): ")) 
+data_list= [name, surname, age, birth]
+for i in data_list:
+  print(i)
+if age<18:
+  print("You can't go out because it's too dangerous.")  
+else:
+  print("You can go out to the street.")
