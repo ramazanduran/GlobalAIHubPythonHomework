@@ -1,1 +1,8 @@
+x1= input("Enter 5 values, First, Enter Name: ")
+x2= input("Second, Enter Surname: ")
+x3= int(input("Third, Enter Age: "))
+x4= int(input("Fourth, Enter Birthday(Just Year): "))
+x5= float(input("Fifth, Enter pi Value(like x.xx): "))
+
+print(f"First value is {x1} and type is {type(x1)}, second value is {x2} and type is {type(x2)}, third value is {x3} and type is {type(x3)}, fourth value is {x4} and type is {type(x4)}, fifth (final) value is {x5} and type is {type(x5)}")
 
