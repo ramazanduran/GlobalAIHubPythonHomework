@@ -1,0 +1,103 @@
+
+import random 
+
+photo = ["""
+   +---+
+   |   |
+       |
+       |
+       |
+       |
+--------""","""
+   +---+
+   |   |
+   O   |
+       |
+       |
+       |
+--------""","""
+   +---+
+   |   |
+   O   |
+   |   |
+       |
+       |
+--------""","""
+   +---+
+   |   |
+   O   |
+  /|   |
+       |
+       |
+--------""","""
+   +---+
+   |   |
+   O   |
+  /|\  |
+       |
+       |
+--------""","""
+   +---+
+   |   |
+   O   |
+  /|\  |
+  /    |
+       |
+--------""","""
+   +---+
+   |   |
+   O   |
+  /|\  |
+  / \  |
+       |
+--------"""]
+
+name= input("Welcome to our game of guessing numbers between 0-50. Can you write your name?: ")
+print(f"Welcome {name}, are you ready to start the game?" )
+
+answer=input("Yes - No: ") 
+if "Yes" == answer or "Y" == answer or "y"==answer or "yes"==answer :
+  print("If you enter 7 wrong words you lose")
+  while True:
+     print(("----->") + " Hangman Game " + ("<-----"))
+    
+     num = random.randint(0,50)
+     step = 0
+     guess = []
+   
+   
+     while True:
+          print(photo[step])
+        
+          
+          print(9* "-"),
+            
+          answer1 = int(input("Guess the number: "))
+          
+          if answer1 == num:
+             print(f"You won! The number is {num}")
+             break
+          
+         
+          if answer1 < num:
+               print("You didn't know, increase your number")
+          if answer1 > num:
+                print("You didn't know , decrease your number")
+          else:
+             while True:
+                  randomm = random.randint(0, 6)
+                  if not rastgele in guess:
+                     guess.append(randomm)
+                     break
+                 
+             step += 1
+         
+          if step >= len(photo):
+              print(f"You lost! The number is {num}")
+              break
+        
+     if not "y" == input("Would You Like To Play Again? (y/n): "):
+        break
+  print("Have a nice day")     
+else:
+  print("Have a nice day")         
