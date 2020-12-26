@@ -86,11 +86,11 @@ if "Yes" == answer or "Y" == answer or "y"==answer or "yes"==answer :
           else:
              while True:
                   randomm = random.randint(0, 6)
-                  if not rastgele in guess:
+                  if not randomm in guess:
                      guess.append(randomm)
                      break
                  
-             step += 1
+          step += 1
          
           if step >= len(photo):
               print(f"You lost! The number is {num}")
