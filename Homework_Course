@@ -1,0 +1,51 @@
+studentlist = ["Ramazan Duran", "Kübra Takcı", "Bahri Erkam Yaylamaz", "Cemay Bolat", "Ahmet Yavuz"]
+print(f"Welcome. Which of these people are you? {studentlist}")
+
+counter=3
+while True:
+  if (counter>0):
+    student_name=input("Enter your name and surname (like this: Aaaa Bbbb)")
+    if student_name in studentlist:
+      print(f"Welcome {student_name}")
+      
+      courses=[]
+      while True:
+        courses_name= input("Enter a maximum of 5 course names, if done, write f or F: ")
+        if courses_name == "f" or courses_name == "F":
+          break
+        courses+=[courses_name]
+
+      num = len(courses)
+      if  num < 3:
+        print("You failed in class")
+      else:
+        course1 = input(f"To calculate the grade, you must choose a course {courses}: ")
+
+        def gradee (midterm, final, project) :
+          gradee= midterm*0.3 + final*0.5 + project*0.2
+  
+          if gradee>90:
+            print(f"You passed the {course1} lesson with AA with an average of {gradee}.")
+          elif 70< gradee and gradee <90:
+            print(f"You passed the {course1} lesson with BB with an average of {gradee}.")
+          elif 50< gradee and gradee <70:
+            print(f"You passed the {course1} lesson with CC with an average of {gradee}.")
+          elif 30< gradee and gradee < 50:
+            print(f"You passed the {course1} lesson with DD with an average of {gradee}.")
+          else:
+            print(f"You fail {course1} class with FF with an average of {gradee}.")
+
+        midterm= int(input("Enter midterm point"))
+        final= int(input("Enter final point"))
+        project= int(input("Enter project point"))
+        key=["Midterm","Final", "Project"]
+        value=[midterm,final,project]
+        grade = dict(zip(key,value))
+        gradee(midterm,final,project)
+      break
+    elif not student_name in studentlist:
+      print("Please enter your name and surname correctly")
+      counter-=1
+  else:
+    print("Please try again later")
+    break
